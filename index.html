@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RETRO MARIO - 1970s</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- CRT Overlay -->
+        <div class="crt-overlay"></div>
+        
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- UI Overlays -->
+        <div id="ui-layer">
+            <div class="hud">
+                <div id="score-display">SCORE: 000000</div>
+                <div id="title-display">MARIO</div>
+                <div>
+                    <span id="high-score-display">HI: 000000</span><br>
+                    <span id="lives-display">LIVES: ***</span>
+                </div>
+            </div>
+
+            <!-- Menu Screen -->
+            <div id="menu-screen" class="screen active">
+                <h1>RETRO MARIO</h1>
+                <div class="difficulty-select">
+                    <h3>SELECT DIFFICULTY</h3>
+                    <button class="diff-btn" data-diff="easy">EASY</button>
+                    <button class="diff-btn active" data-diff="medium">MEDIUM</button>
+                    <button class="diff-btn" data-diff="hard">HARD</button>
+                    <button class="diff-btn" data-diff="auto">AUTO (SCALING)</button>
+                </div>
+                <p class="blink">TAP OR PRESS ENTER TO START</p>
+                <div class="instructions">
+                    Desktop: Arrows to Move, Space to Jump<br>
+                    Mobile: Use On-Screen Controls<br>
+                    Stomp enemies! Collect coins!
+                </div>
+                <button id="fullscreen-btn">TOGGLE FULLSCREEN</button>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div id="game-over-screen" class="screen">
+                <h1>GAME OVER</h1>
+                <p id="final-score">SCORE: 0</p>
+                <p class="blink">TAP OR PRESS ENTER TO RESTART</p>
+            </div>
+
+            <!-- Win Screen -->
+            <div id="win-screen" class="screen">
+                <h1>YOU WIN!</h1>
+                <p id="win-score">SCORE: 0</p>
+                <p class="blink">TAP OR PRESS ENTER TO PLAY AGAIN</p>
+            </div>
+        </div>
+
+        <!-- Mobile Touch Controls -->
+        <div id="mobile-controls">
+            <div class="d-pad">
+                <button id="btn-left" class="touch-btn">◄</button>
+                <button id="btn-right" class="touch-btn">►</button>
+            </div>
+            <div class="action-pad">
+                <button id="btn-jump" class="touch-btn">JUMP</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
